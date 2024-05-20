@@ -4,6 +4,7 @@
 @guppy(module)
 def used_consume(qubit: a):
     b = h(a)
+    # Error a is consumed
     c = t(a)
 
     return a,c
@@ -22,6 +23,7 @@ def partial_consume(qubit: a):
 
 
 @guppy(module)
+#f function from the paper
 def f(z: qubit,u:qubit):
     r = qubit()
 
@@ -39,6 +41,7 @@ def f(z: qubit,u:qubit):
     return c
 
 @guppy(module)
+# r_f function from the paper
 def r_f(z: qubit,u:qubit):
     r,a = qubit()
 
@@ -60,7 +63,7 @@ def r_f(z: qubit,u:qubit):
 
 
 @guppy(module)
-# qua io devo inserire i 2 discard
+# here I have to insert 2 discards
 def cond_overwriting(_: qubit) -> qubit:
     c = qubit()
     if e:
@@ -84,7 +87,7 @@ def loop_consume(_: qubit) -> qubit:
     while e:
         b = qubit()
         b = x(b)
-        discard(b)
+        #discard(b)
 
     return c
 
@@ -95,6 +98,7 @@ def and3(x: qubit,y: qubit,z: qubit):
     r,a = qubit(),qubit()
     x,y,a = toff(x,y,a)
     z,a,r = toff(z,a,r)
+    #discard a
 
     return x,y,z,r
 

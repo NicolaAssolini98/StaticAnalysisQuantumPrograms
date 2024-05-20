@@ -13,11 +13,11 @@ The directory `test` contains a txt file with some small examples, the programs 
 
 We made some simplification to Guppy programs, in particular, """
 
-I cannot write:
+we cannot write:
 
     if measure(bla):
 
-I have to write:
+we have to write:
 
     r = measure(bla)
     if r:
@@ -42,6 +42,16 @@ or
     
    
     
-I must always assign when using quantum functions, apart from discard
-all classical variables must be marked as `_`, so that they are ignored by the analysis
-I consider a simplified cfg, so no break or continue
+We must always assign when using quantum functions, apart from discard, so we cannot write things likes
+
+    measure(q)
+
+This constraint comes from Guppy.
+
+Our pipeline is thought to be inserted in the compilation process, after having filtered all non-relevant part of the program.
+All classical variables must be marked as `_`, so that they are ignored by the analysis
+
+Finally, we consider a simplified CFG, so no break or continue
+
+
+In the example we write, as comments, the errors that must be generated or where me must add the discard functions

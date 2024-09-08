@@ -1,18 +1,17 @@
 
-This scrip requires only `networkx` and `matplotlib` libraries to be executed
+This script requires only `networkx` and `matplotlib` libraries to be executed
 
-To test the prototype execute the `main.py` file.
+To test the prototype, execute the `main.py` file.
 
 The directory `test` contains a txt file with some small examples, the programs analyse only function decorated with `@guppy` decorator.
 
 `print_cfg` plots the cfg
-`consuming_analysis` execute the consuming analysis, 
+`consuming_analysis` executes the consuming analysis, 
 `consuming_check` checks the correctness of the programs
-`uncomputation_analysis` perform the analysis of uncomputation
-`insert_discard` insert the discard function using the information from previous analysis
+`uncomputation_analysis` performs the analysis of uncomputation
+`insert_discard` inserts the discard function using the information from the previous analysis
 
-We made some simplification to Guppy programs, in particular, """
-
+We made some simplifications to Guppy programs, in particular, 
 we cannot write:
 
     if measure(bla):
@@ -23,7 +22,7 @@ we have to write:
     if r:
     
 
-we don't consider inline function:
+we don't consider inline functions:
 
     q = h(qubit())
 
@@ -53,5 +52,4 @@ All classical variables must be marked as `_`, so that they are ignored by the a
 
 Finally, we consider a simplified CFG, so no break or continue
 
-
-In the example we write, as comments, the errors that must be generated or where me must add the discard functions
+In the example, we write, as comments, the errors that must be generated or where we must add the discard functions

@@ -67,6 +67,11 @@ def get_all_vars(cfg):
 
 
 def consuming_analysis(cfg):
+    '''
+    executes the consuming analysis,
+    :param cfg: cfg
+    :return: a dictionary contains for all nodes the result of the analysis
+    '''
     all_vars = get_all_vars(cfg)
     avs = {node: all_vars for node in cfg.nodes()}
 
@@ -105,9 +110,10 @@ def consuming_analysis(cfg):
 
 def consuming_check(cfg, avs_vars):
     """
-    returns a list of triple:
-    (node, edge, variable) thats indicates the node in which we find the error, the edge (i.e. the instruction) that
-    generates it, and the variables that are used not properly
+    checks the correctness of the programs
+
+    returns a list of triple: (node, edge, variable) thats indicates the node in which we find the error, the edge
+    (i.e. the instruction) that generates it, and the variables that are used not properly
     """
     error_list = []
     for edge in cfg.edges:
@@ -138,6 +144,10 @@ def lub_2_pairs(pair1, pair2):
 
 
 def uncomputation_analysis(cfg):
+    '''
+    performs the analysis of uncomputation
+    :return: a dictionary contains for all nodes the result of the analysis
+    '''
     # (safe, unsafe)
     pairs = {node: None for node in cfg.nodes()}
     pairs[exit_node] = (set(), set())

@@ -37,6 +37,11 @@ class NodeType(Enum):
 
 
 def print_cfg(cfg, print_details):
+    """
+    plots the cfg
+    :param cfg: control flow graph
+    :param print_details: id true we print the list of nodes and edges
+    """
     print(type(cfg))
     if print_details:
         print(cfg.nodes)

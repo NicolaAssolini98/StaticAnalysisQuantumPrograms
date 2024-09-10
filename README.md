@@ -1,7 +1,7 @@
 
 
 # Static Analysis of Quantum Programs
-Code for the SAS 2024 paper: "Static Analysis Quantum Programs"
+Code for the SAS 2024 paper: "Static Analysis of Quantum Programs"
 
 > In principle, the design and implementation of quantum programming languages are the same essential tasks as for conventional (classical) programming languages. High-level programming constructs and compilation tools are structurally similar in both cases. The difference is mainly in the hardware machine executing the final code, which in the case of quantum programming languages is a quantum processor, i.e. a physical object obeying the laws of quantum mechanics. Therefore, special technical solutions are required to comply with such laws. In this paper, we show how static analysis can guarantee the correct implementation of quantum programs by introducing two data-flow analyses for detecting some ‘wrong‘ uses of quantum variables. A compiler including such analyses would allow for a higher level of abstraction in the quantum language, relieving the programmer of low-level tasks such as the safe removal of temporary variables.
 
